@@ -1,0 +1,678 @@
+/* ========================================
+   1. VARIÁVEIS
+======================================== */
+
+:root {
+  --laranja: #f28c28;
+  --laranja-hover: #d97516;
+  --bege: #f5ebdd;
+  --branco: #ffffff;
+  --preto: #222222;
+  --cinza: #6b625a;
+  --borda: #e8ded0;
+
+  --sombra: 0 8px 24px rgba(34, 34, 34, 0.06);
+  --raio: 16px;
+  --largura-maxima: 1200px;
+}
+
+/* ========================================
+   2. RESET E CONFIGURAÇÕES GERAIS
+======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bege);
+  color: var(--preto);
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  width: 100%;
+  max-width: 1600px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 20px 5%;
+}
+
+section[id],
+header[id] {
+  scroll-margin-top: 24px;
+}
+
+/* ========================================
+   3. NAVEGAÇÃO
+======================================== */
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  padding: 16px 24px;
+
+  background-color: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo {
+  width: 140px;
+  height: auto;
+  object-fit: contain;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+
+  list-style: none;
+}
+
+.menu a {
+  color: var(--cinza);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.menu a:hover {
+  color: var(--laranja-hover);
+}
+
+/* ========================================
+   4. BOTÕES
+======================================== */
+
+.btn-pedido,
+.btn-serviço {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 46px;
+  padding: 12px 20px;
+
+  border: 2px solid transparent;
+  border-radius: 10px;
+
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.btn-pedido {
+  background-color: var(--laranja);
+  border-color: var(--laranja);
+  color: var(--preto);
+}
+
+.btn-pedido:hover {
+  background-color: var(--laranja-hover);
+  border-color: var(--laranja-hover);
+  color: var(--branco);
+  transform: translateY(-2px);
+}
+
+.btn-serviço {
+  background-color: var(--branco);
+  border-color: var(--borda);
+  color: var(--preto);
+}
+
+.btn-serviço:hover {
+  background-color: var(--preto);
+  border-color: var(--preto);
+  color: var(--branco);
+}
+
+.btn-pedido:focus-visible,
+.btn-serviço:focus-visible,
+.menu a:focus-visible {
+  outline: 3px solid var(--laranja);
+  outline-offset: 4px;
+}
+
+/* ========================================
+   5. APRESENTAÇÃO PRINCIPAL
+======================================== */
+
+.container-topo {
+  display: flex;
+  align-items: center;
+
+  min-height: 500px;
+  margin-top: 24px;
+  padding: 64px 7%;
+
+  background-color: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: 20px;
+  box-shadow: var(--sombra);
+}
+
+.header-txt {
+  width: 100%;
+  max-width: 650px;
+}
+
+.subtitulo {
+  margin-bottom: 12px;
+
+  color: var(--laranja-hover);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.header-txt .subtitulo {
+  margin-bottom: 16px;
+}
+
+.header-txt h1 {
+  margin-bottom: 20px;
+
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -1.5px;
+}
+
+.destaque {
+  color: var(--laranja-hover);
+}
+
+.txt-header {
+  max-width: 520px;
+  margin-bottom: 30px;
+
+  color: var(--cinza);
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.header-acoes {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+/* ========================================
+   6. ÁREA PRINCIPAL
+======================================== */
+
+.hero {
+  padding: 36px 0 20px;
+}
+
+/* ========================================
+   7. CARDS DE BENEFÍCIOS
+======================================== */
+
+.container-card-es {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.card-estatico {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 14px;
+
+  min-height: 100px;
+  padding: 22px;
+
+  background-color: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card-estatico:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra);
+}
+
+.card-estatico i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 46px;
+  height: 46px;
+
+  background-color: #fff1df;
+  border-radius: 12px;
+
+  color: var(--laranja-hover);
+  font-size: 20px;
+}
+
+.card-estatico p {
+  color: var(--preto);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+/* ========================================
+   8. SEÇÕES DE CONTEÚDO
+======================================== */
+
+.servicos {
+  padding: 64px 0 24px;
+  text-align: center;
+}
+
+.servicos > .subtitulo {
+  margin-bottom: 10px;
+}
+
+.servicos h2 {
+  max-width: 800px;
+  margin: 0 auto 12px;
+
+  font-size: clamp(28px, 4vw, 38px);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+}
+
+.servicos > p:not(.subtitulo) {
+  max-width: 650px;
+  margin: 0 auto;
+
+  color: var(--cinza);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* ========================================
+   9. CARDS DE SERVIÇOS
+======================================== */
+
+.container-card {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 24px;
+
+  margin-top: 32px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+
+  min-width: 0;
+  min-height: 250px;
+  padding: 32px 24px;
+
+  background-color: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  box-shadow: 0 4px 12px rgba(34, 34, 34, 0.04);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: #f3c28e;
+  box-shadow: var(--sombra);
+}
+
+.card i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 64px;
+  height: 64px;
+
+  background-color: #fff1df;
+  border-radius: 18px;
+
+  color: var(--laranja-hover);
+  font-size: 28px;
+}
+
+.card h3 {
+  color: var(--preto);
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.card span {
+  max-width: 280px;
+
+  color: var(--cinza);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+/* ========================================
+   10. AGENDAMENTO
+======================================== */
+
+#agendamento {
+  margin-top: 24px;
+  padding: 56px 24px;
+
+  background-color: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: 20px;
+  box-shadow: var(--sombra);
+}
+
+#agendamento .header-acoes {
+  width: 100%;
+}
+
+/* ========================================
+   11. SOBRE E CONTATO
+======================================== */
+
+#sobre,
+#contato {
+  padding-right: 12px;
+  padding-left: 12px;
+}
+
+#sobre > p:not(.subtitulo),
+#contato > p:not(.subtitulo) {
+  max-width: 680px;
+}
+
+/* ========================================
+   12. RODAPÉ
+======================================== */
+
+footer {
+  margin-top: 40px;
+  padding: 24px 0;
+  border-top: 1px solid var(--borda);
+  text-align: center;
+}
+
+footer p {
+  color: var(--cinza);
+  font-size: 13px;
+}
+
+/* ========================================
+   13. RESPONSIVIDADE — TABLETS
+======================================== */
+
+@media (max-width: 1000px) {
+  .container {
+    padding-right: 3%;
+    padding-left: 3%;
+  }
+
+  .nav-container {
+    gap: 18px;
+    padding: 16px;
+  }
+
+  .menu {
+    gap: 16px;
+  }
+
+  .logo {
+    width: 115px;
+  }
+
+  .container-topo {
+    min-height: 420px;
+    padding: 48px 5%;
+  }
+
+  .container-card-es,
+  .container-card {
+    gap: 16px;
+  }
+
+  .card-estatico {
+    padding: 18px;
+  }
+
+  .card {
+    padding: 28px 18px;
+  }
+}
+
+/* ========================================
+   14. RESPONSIVIDADE — CELULARES
+======================================== */
+
+@media (max-width: 700px) {
+  .container {
+    padding: 12px;
+  }
+
+  .nav-container {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .logo {
+    width: 105px;
+  }
+
+  .nav-container > .btn-pedido {
+    min-height: 40px;
+    padding: 9px 12px;
+    font-size: 12px;
+  }
+
+  .menu {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 12px 20px;
+    padding-top: 12px;
+
+    border-top: 1px solid var(--borda);
+  }
+
+  .menu a {
+    font-size: 13px;
+  }
+
+  .container-topo {
+    min-height: auto;
+    margin-top: 16px;
+    padding: 42px 24px;
+  }
+
+  .header-txt h1 {
+    font-size: clamp(34px, 8vw, 46px);
+    letter-spacing: -1px;
+  }
+
+  .txt-header {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .header-acoes {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .header-acoes a {
+    width: 100%;
+    white-space: normal;
+  }
+
+  .hero {
+    padding-top: 24px;
+  }
+
+  .container-card-es {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .card-estatico {
+    min-height: 82px;
+    padding: 16px 20px;
+  }
+
+  .servicos {
+    padding-top: 44px;
+  }
+
+  .servicos h2 {
+    font-size: 28px;
+  }
+
+  .servicos > p:not(.subtitulo) {
+    font-size: 14px;
+  }
+
+  .container-card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .card {
+    min-height: 220px;
+    padding: 28px 20px;
+  }
+
+  #agendamento {
+    margin-top: 16px;
+    padding: 40px 20px;
+  }
+
+  #sobre,
+  #contato {
+    padding-right: 4px;
+    padding-left: 4px;
+  }
+}
+
+/* ========================================
+   15. TELAS MUITO PEQUENAS
+======================================== */
+
+@media (max-width: 380px) {
+  .nav-container {
+    padding: 12px;
+  }
+
+  .logo {
+    width: 90px;
+  }
+
+  .menu {
+    gap: 10px 14px;
+  }
+
+  .menu a {
+    font-size: 12px;
+  }
+
+  .container-topo {
+    padding: 34px 18px;
+  }
+
+  .header-txt h1 {
+    font-size: 32px;
+  }
+
+  .card-estatico {
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .card i {
+    width: 56px;
+    height: 56px;
+    font-size: 24px;
+  }
+}
+
+/* ========================================
+   16. ACESSIBILIDADE
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
